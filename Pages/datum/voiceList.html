@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="max-age=14400">
+    <title>语音导览</title>
+    <link rel="stylesheet" href="../../Static/css/base.css" />
+    <link rel="stylesheet" href="../../Static/css/style.css?2016080301" />
+    <link rel="stylesheet" href="../../Static/css/audioplayer.css">
+    <script src="../../Static/js/jquery-2.2.1.js"></script>
+    <script src="../../Static/js/jquery.touchSlider.js"></script>
+</head>
+
+<body>
+    <div class="wrapper" style="background-color: #fff;">
+        <section class="content">
+            <header>
+                <a class="left" href="javascript:;" onclick="history.back(-1);"><i class="icon-last"></i></a>
+                <h3></h3>
+                <a href="../index.html"><i class="icon-home"></i></a>
+            </header>
+            <ul class="voice-list clearfix" id="voiceList">
+                <!-- <li>
+                    <img src="../../Static/images/cal.png" alt="">
+                    <p class="clearfix">
+                        <span>乘骝桥</span>
+                        <i class="audioplayer-sm"><audio src="../../Voice/seeyouagain.mp3" preload="auto" controls></audio></i>
+                    </p>
+                </li> -->
+            </ul>
+            <!-- <div class="bottom-placeholder"></div> -->
+            <footer>
+                <ul class="contact clearfix">
+                    <li>
+                        <a id="followBtn" href="javascript:;">点击关注</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="telBtn">电话咨询</a>
+                        <div class="tel-group">
+                            <a href="tel:65103815">拨打:65103815</a>
+                            <a href="tel:65103465">拨打:65103465</a>
+                            <p class="arrow-bottom"></p>
+                        </div>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+    </div>
+    <div class="overlay" id="followOverlay" style="display: none;">
+        <div class="overlay-bg"></div>
+        <div class="qr-code">
+            <img src="../../Static/images/qr-code.jpg" alt="">
+            <p>扫一扫关注道前印巷</p>
+        </div>
+    </div>
+    <script src="../../Static/js/common.js?v=2016091101"></script>
+    <script src="../../Static/js/audioplayer.js"></script>
+    <script>
+    var settings = {
+        url: 'http://szdq.losta.net/api/TravelScenery',
+        type: 'GET',
+        dataType: 'json'
+    }
+    $.ajax(settings).done(function(data) {
+        var voiceHtml = '';
+        $.each(data, function(i, v) {
+            var voiceUrl = v.VoiceUrl? (v.VoiceUrl.indexOf('/') == 0? v.VoiceUrl : '/' +  v.VoiceUrl) : '/voice/seeyouagain.mp3';
+            voiceUrl = 'http://fast-szdq.losta.net/' + voiceUrl;
+            var mapUrl = v.MapUrl? v.MapUrl : '../../Static/images/cal.png';
+            mapUrl = 'http://fast-szdq.losta.net/' + mapUrl + '-thumb';
+            voiceHtml += '<li>'
+                       + '    <img src="' + mapUrl + '" alt="">'
+                       + '    <p class="clearfix">'
+                       + '        <span><a href="sceneryDetails.html?sceneryId=' + v.SceneryId + '">' + v.SceneryName + '</a></span>'
+                       + '        <i class="audioplayer-sm"><audio src="' + voiceUrl + '" preload="auto" controls></audio></i>'
+                       + '    </p>'
+                       + '</li>';
+        });
+        $('#voiceList').html(voiceHtml);
+        $('audio').audioPlayer();
+    })
+    </script>
+</body>
+
+</html>

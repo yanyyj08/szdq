@@ -1,0 +1,753 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+section {
+    background-color: #fff;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #385ba0;
+}
+
+header a {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+}
+
+header .left {
+    left: 0;
+    background: #183e8b;
+}
+
+header .icon-last {
+    display: block;
+    margin: 0 auto;
+    width: 1rem;
+    height: 4rem;
+    background: url(../images/icon-last.png) no-repeat center center;
+    background-size: contain;
+}
+
+header .icon-home {
+    display: block;
+    margin: 0 auto;
+    width: 1.8rem;
+    height: 4rem;
+    background: url(../images/icon-home.png) no-repeat center center;
+    background-size: contain;
+}
+
+header h3 {
+    margin: 0 auto;
+    width: 11.5rem;
+    height: 4rem;
+    background: url(../images/header-logo.png) no-repeat center center;
+    background-size: contain;
+}
+
+footer {
+    width: 100%;
+    max-width: 720px;
+    background-color: #385aa1;
+    // -webkit-transform: translateZ(0);
+}
+
+.footer-index {
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+}
+
+.content {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    // -webkit-transform: translateZ(0);
+}
+
+.pb52 {
+    padding-bottom: 5.2rem;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.bottom-placeholder {
+    width: 100%;
+    height: 6.7rem;
+}
+
+.top-placeholder {
+    width: 100%;
+    height: 3rem;
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 720px;
+    *padding-top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.index-pic {
+    position: relative;
+    width: 100%;
+    height: 17.6rem;
+}
+
+.index-pic img {
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.index-pic > i {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 25%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: url('../images/dq-logo.png') no-repeat center;
+    background-size: contain;
+}
+
+
+/*轮播*/
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    overflow-x: hidden;
+}
+
+.carousel-main {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    height: 15rem;
+}
+
+.carousel-lg .carousel-main {
+    height: 18rem;
+}
+
+.carousel-main ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hot-spots .spot-box .carousel-main ul {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    overflow: hidden;
+}
+
+.carousel-main li {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-main ul a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-main img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .carousel-icon {
+    position: relative;
+    margin: -1.5rem auto 0;
+    padding: .3rem 0;
+    width: 3.6rem;
+}
+
+.carousel .carousel-icon a {
+    display: inline-block;
+    float: left;
+    margin: 0 .3rem;
+    width: .6rem;
+    height: .6rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    border-radius: .3rem;
+    background-color: #f1f1f1;
+}
+
+.carousel .carousel-icon .current {
+    background-color: #1baee4;
+}
+
+//轮播
+//首页
+.nav-index ul {
+    box-sizing: border-box;
+    margin-top: -1px;
+    margin-left: -1px;
+    width: 100%;
+}
+
+.nav-index li {
+    float: left;
+    box-sizing: border-box;
+    padding: 1.7rem 0;
+    width: 33.3%;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+.nav-index li a {
+    display: block;
+}
+
+.nav-index li div {
+    margin: 0 auto;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-color: #385aa1;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.nav-index .line-2 div {
+    background-color: #774791;
+}
+
+.nav-index .line-3 div {
+    background-color: #6e8ec1;
+}
+
+.nav-index li i {
+    display: block;
+    margin: 0 auto;
+    width: 2.4rem;
+    height: 100%;
+    background: url(../images/icon-index-01.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-02 {
+    background: url(../images/icon-index-02.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-03 {
+    background: url(../images/icon-index-03.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-04 {
+    background: url(../images/icon-index-04.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-05 {
+    background: url(../images/icon-index-05.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-06 {
+    background: url(../images/icon-index-06.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-07 {
+    background: url(../images/icon-index-07.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-08 {
+    background: url(../images/icon-index-08.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li .icon-index-09 {
+    background: url(../images/icon-index-09.png) no-repeat center center;
+    background-size: contain;
+}
+
+.nav-index li p {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 1.4rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+//首页
+//footer
+.contact {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact li {
+    position: relative;
+    float: left;
+    padding: 2rem 0;
+    width: 50%;
+}
+
+.contact li>a {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    text-align: center;
+    color: #385aa1;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #fff;
+}
+
+.contact .tel-group {
+    position: absolute;
+    top: 0;
+    display: none;
+    margin-top: calc(-4rem - 8px);
+    width: 100%;
+}
+
+.contact .tel-group a {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #f1f1f1;
+}
+
+.contact .tel-group a:first-child {
+    border-bottom: 1px solid #dbdbdb;
+    border-radius: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.contact .tel-group .arrow-bottom {
+    margin: 0 auto;
+    width: 0px;
+    border: 8px solid transparent;
+    border-top: 8px solid #f1f1f1;
+}
+/*首页*/
+
+
+/*景点列表*/
+
+.scenery-list li {
+    box-sizing: border-box;
+    margin: .6rem auto;
+    padding: .4rem;
+    width: 88%;
+    background-color: #385aa1;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.scenery-list .left {
+    width: 45%;
+    height: 8.2rem;
+}
+
+.scenery-list .right {
+    position: relative;
+    box-sizing: border-box;
+    padding: 1.2rem 0;
+    width: 55%;
+    height: 8.2rem;
+}
+
+.scenery-list img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.scenery-list h3 {
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.scenery-list a {
+    position: absolute;
+    left: calc(50% - 3.7rem);
+    bottom: 1.2rem;
+    display: block;
+    width: 7.4rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    color: #385aa1;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #fff;
+}
+
+
+/*景点列表*/
+
+
+/*线路详情*/
+
+.route-view {
+    width: 100%;
+    height: 18.5rem;
+}
+
+.route-view img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.route-name {
+    height: 6.6rem;
+    line-height: 6.6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #385aa1;
+    text-align: center;
+}
+
+.route-details {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    border-left: 1px dotted #385aa1;
+}
+
+.route-details li {
+    margin: 1.6rem auto 0;
+    width: 85%;
+}
+
+.route-details li:first-child {
+    margin-top: 0;
+}
+
+.route-details li .icon-people {
+    position: absolute;
+    left: 0;
+    display: block;
+    margin-left: -1.4rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: url(../images/icon-people.png) no-repeat center center;
+    background-size: contain;
+}
+
+.route-details li h3 {
+    height: 2.8rem;
+    line-height: 2.8rem;
+    font-size: 1.3rem;
+}
+
+.route-details li img {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 12rem;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.route-details li a {
+    display: block;
+    margin-top: 1.4rem;
+    width: 7.5rem;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #385aa1;
+}
+
+
+/*线路详情*/
+
+
+/*线路列表*/
+
+.route-map {
+    width: 100%;
+    height: 30rem;
+}
+
+.route-map.route-map-lg {
+    height: calc(100% - 10.8rem);
+}
+
+.route-list li {
+    padding: 0 1.2rem 2rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.route-list h3 {
+    padding: 1.2rem 0;
+}
+
+.route-list h3 i {
+    float: left;
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background-color: #385aa1;
+    border-radius: 1rem;
+}
+
+.route-list h3 span {
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    color: #385aa1;
+    font-size: 1.2rem;
+}
+
+.route-list div {
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+.route-list a {
+    display: block;
+    margin-top: .5rem;
+    width: 7.5rem;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #385aa1;
+}
+
+
+/*线路列表*/
+
+
+/*音频列表*/
+
+.voice-list {
+    margin: 0 auto;
+    width: 94%;
+}
+
+.voice-list li {
+    float: left;
+    margin: .6rem 3%;
+    width: 44%;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    background-color: #385aa1;
+}
+
+.voice-list li img {
+    display: block;
+    width: 96%;
+    height: 12rem;
+    margin: .2rem auto 0;
+    border-radius: 6px;
+    border: 1px soild #fff;
+}
+
+.voice-list p {
+    position: relative;
+    padding: .8rem 1.5rem;
+}
+
+.voice-list span {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.voice-list a {
+    color: #fff;
+}
+
+.voice-list i {
+    position: absolute;
+    right: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.voice-list b {
+    position: absolute;
+    right: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url(../images/icon-download.png) no-repeat center center;
+    background-size: contain;
+}
+
+
+/*音频列表*/
+
+
+/*景点详情*/
+
+.scenery-name {
+    width: 100%;
+    margin-top: 1rem;
+    height: 4.8rem;
+    line-height: 4.8rem;
+    color: #385aa1;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.scenery-details {
+    padding: 0 1.4rem 4rem;
+}
+
+.scenery-details .scenery-pic {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 18rem;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.scenery-details .scenery-intro {
+    line-height: 1.8rem;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.scenery-details .scenery-intro img {
+    display: block;
+    margin: .2rem 0;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+/*景点详情*/
+
+/*遮罩层*/
+.overlay {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    opacity: .7;
+}
+
+.qr-code {
+    position: absolute;
+    z-index: 100;
+    top: 20%;
+}
+
+.qr-code img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.qr-code p {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.alert {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 15%;
+    box-sizing: border-box;
+    margin-top: -2rem;
+    width: 70%;
+    padding: 1rem 2rem;
+    color: #ddd;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #111;
+    opacity: .9;
+}
+
+.map-button {
+    line-height: 20px;
+    font-size: 16px;
+    color: #5da1ec;
+    text-decoration: underline;
+}
+.map-button:hover {
+    color: #5da1ec;
+}
+.amap-info-content {
+    padding: 10px 24px 10px 10px;
+}

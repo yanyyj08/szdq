@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="max-age=14400">
+    <title>景点列表</title>
+    <link rel="stylesheet" href="../../Static/css/base.css" />
+    <link rel="stylesheet" href="../../Static/css/style.css?2016080301" />
+    <script src="../../Static/js/jquery-2.2.1.js"></script>
+    <script src="../../Static/js/jquery.touchSlider.js"></script>
+</head>
+
+<body>
+    <div class="wrapper" style="background-color: #fff;">
+        <section class="content">
+            <header>
+                <a class="left" href="javascript:;" onclick="history.back(-1);"><i class="icon-last"></i></a>
+                <h3></h3>
+                <a href="../index.html"><i class="icon-home"></i></a>
+            </header>
+            <ul class="scenery-list" id="sceneryList">
+                <!-- <li class="clearfix">
+                    <div class="left">
+                        <img src="../../Static/images/cal.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h3>名字</h3>
+                        <a href="javascript:;">查看详情</a>
+                    </div>
+                </li> -->
+            </ul>
+            <!-- <div class="bottom-placeholder"></div> -->
+            <footer>
+                <ul class="contact clearfix">
+                    <li>
+                        <a id="followBtn" href="javascript:;">点击关注</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" id="telBtn">电话咨询</a>
+                        <div class="tel-group">
+                            <a href="tel:65103815">拨打:65103815</a>
+                            <a href="tel:65103465">拨打:65103465</a>
+                            <p class="arrow-bottom"></p>
+                        </div>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+    </div>
+    <div class="overlay" id="followOverlay" style="display: none;">
+        <div class="overlay-bg"></div>
+        <div class="qr-code">
+            <img src="../../Static/images/qr-code.jpg" alt="">
+            <p>扫一扫关注道前印巷</p>
+        </div>
+    </div>
+    <script src="../../Static/js/common.js?v=2016091101"></script>
+    <script>
+    var settings = {
+        url: 'http://szdq.losta.net/api/TravelScenery',
+        type: 'GET',
+        dataType: 'json'
+    }
+    $.ajax(settings).done(function(data) {
+    var sceneryHtml = '';
+        $.each(data, function(i, v){
+            var mapUrl = v.MapUrl? v.MapUrl : '../../Static/images/cal.png';
+            mapUrl = 'http://fast-szdq.losta.net/' + mapUrl + '-thumb';
+            sceneryHtml += '<li class="clearfix">'
+                         + '    <div class="left">'
+                         + '        <img src="' + mapUrl + '" alt="">'
+                         + '    </div>'
+                         + '    <div class="right">'
+                         + '        <h3>' + v.SceneryName + '</h3>'
+                         + '        <a href="sceneryDetails.html?sceneryId=' + v.SceneryId + '">查看详情</a>'
+                         + '    </div>'
+                         + '</li>';
+        });
+        $('#sceneryList').html(sceneryHtml);
+    })
+    </script>
+</body>
+
+</html>

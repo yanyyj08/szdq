@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>线路设置</title>
+    <link rel="stylesheet" href="../Static/css/bootstrap.css">
+    <link rel="stylesheet" href="../Static/css/base.css">
+    <link rel="stylesheet" href="../Static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../Static/css/wangEditor.min.css">
+    <script src="../Static/js/jquery-2.2.1.js"></script>
+    <script src="../Static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="nav nav-tabs">
+            <a href="javascript:;"></a>
+            <li role="presentation" class="active"><a href="index.html">线路详情</a></li>
+            <li role="presentation"><a href="sceneryView.html">景点详情</a></li>
+        </ul>
+        <div class="content clearfix">
+            <div class="list-box">
+                <a class="btn btn-primary btn-md" href="javascript:;" onclick="showAddForm();">添加</a>
+                <ul class="list" id="routeList">
+                </ul>
+            </div>
+            <div id="modify" class="modify" style="display: none;">
+                <form class="clearfix" name="detailsForm" id="detailsForm" method="POST" action="http://szdq.losta.net/api/travelroute/0">
+                    <div class="left">
+                        <div class="form-group">
+                            <label for="RouteId">线路序号：</label>
+                            <input type="text" class="form-control" name="RouteId" id="RouteId" placeholder="景点ID" readonly="readonly">
+                        </div>
+                        <div class="form-group">
+                            <label for="RouteName">线路名称：</label>
+                            <input type="text" class="form-control" name="RouteName" id="RouteName" placeholder="线路名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="Abstract">摘要：</label>
+                            <textarea rows="3" cols="20" class="form-control" name="Abstract" id="Abstract">
+                                一句话简介
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Comment">备注：</label>
+                            <input type="text" class="form-control" name="Comment" id="Comment" placeholder="乘骝桥——盛家浜——桃园——舒适旧居——游马坡巷——庙堂巷">
+                        </div>
+                        <div class="form-group">
+                            <label for="SceneryKind">语音：</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="VoiceUrl" id="VoiceUrl" readonly="readonly">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">语音选择<span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right" id="voiceUrlList">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="SceneryKind">地图：</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="MapUrl" id="MapUrl" readonly="readonly">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">图片选择<span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right" id="imageUrlList">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="SceneryIdListString" name="SceneryIdListString" />
+                        <div class="form-group">
+                            <label>添加景点：</label>
+                            <div class="form-group">
+                                <select class="form-control" id="allScenery">
+                                </select>
+                            </div>
+                            <!-- <div class="input-group">
+                                <input type="text" class="form-control" id="addSceneryId" placeholder="添加的景点ID" onkeypress="return isNum(event);" readonly="readonly">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="add">add</button>
+                                </span>
+                            </div> -->
+                        </div>
+                        <div id="sceneryDynamic">
+
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="form-group">
+                            <label for="Introduce">导游介绍文字：</label><br>
+                            <button type="button" class="btn btn-primary" id="addImgBtn" data-toggle="modal" data-target=".bs-example-modal-lg">插入图片</button>
+                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">图片选择</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul class="choose-img clearfix" id="chooseImg">
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" onclick="addChoosedImg();" data-dismiss="modal">保存</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="Introduce" name="Introduce">
+                            <div id="introduceDiv"></div>
+                        </div>
+                        <div>
+                            <div id="addBtn">
+                                <a href="javascript:;" class="btn btn-primary btn-lg" style="float: left;" onclick="submitAddForm();">添加</a>
+                                <a href="javascript:;" class="btn btn-primary btn-lg" style="float: left;" onclick="clearForm();">重置</a>
+                            </div>
+                            <div id="modifyBtn">
+                                <a href="javascript:;" class="btn btn-primary btn-lg" style="float: left;" onclick="submitUpdateForm();">更新</a>
+                                <a href="javascript:;" class="btn btn-primary btn-lg" style="float: left;" onclick="submitDeleteForm();">删除</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="bottom clearfix">
+                    <form name="voiceForm" id="voiceForm" method="POST" enctype="multipart/form-data" action="http://szdq.losta.net/api/Files?folder=Voice\">
+                        <div class="form-group">
+                            <label for="voice">voice</label>
+                            <input type="file" name="voice" id="voice">
+                            <p class="help-block">Example block-level help text here.</p>
+                            <input class="btn btn-primary" type="submit" value="确认上传">
+                        </div>
+                    </form>
+                    <form name="mapForm" id="mapForm" method="POST" enctype="multipart/form-data" action="http://szdq.losta.net/api/Files?folder=Images\">
+                        <div class="form-group">
+                            <label for="map">map</label>
+                            <input type="file" name="map" id="map">
+                            <p class="help-block">Example block-level help text here.</p>
+                            <input class="btn btn-primary" type="submit" value="确认上传">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Static/js/wangEditor.js"></script>
+    <script src="../Static/js/adminRoute.js"></script>
+</body>
+
+</html>

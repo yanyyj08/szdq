@@ -1,0 +1,13 @@
+2016-09-12 02:04:02.8880|Info|Application_Start|
+2016-09-12 05:27:34.5736|Info|Application_Start|
+2016-09-12 06:45:00.5786|Info|Application_Start|
+2016-09-12 07:34:50.4418|Info|Application_Start|
+2016-09-12 09:33:07.2336|Info|Application_Start|
+2016-09-12 10:47:59.4624|Info|Application_Start|
+2016-09-12 13:26:43.9391|Info|Application_Start|
+2016-09-12 18:01:06.1768|Info|Application_Start|
+2016-09-12 19:13:58.3249|Info|Application_Start|
+2016-09-12 20:04:59.0318|Info|Application_Start|
+2016-09-12 20:36:34.2302|Info|Application_Start|
+2016-09-12 23:28:25.2319|Info|Application_Start|
+2016-09-12 23:58:41.5681|Info|Application_Start|

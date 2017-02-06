@@ -1,0 +1,1 @@
+2016-09-21 01:41:18.4050|Info|Application_Start|

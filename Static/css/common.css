@@ -1,0 +1,150 @@
+/*bootstrap重置*/
+
+.alert {
+    padding: 5px;
+    margin-bottom: 3px;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+    right: 0;
+}
+
+.dropdown-menu {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+/*bootstrap重置*/
+
+.wrapper {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 1100px;
+}
+
+.content {
+    padding: 50px 0;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.modify {
+    float: left;
+    width: 80%;
+}
+
+.left,
+.bottom form {
+    float: left;
+    padding: 0 25px;
+    width: 50%;
+}
+
+.right {
+    float: right;
+    padding: 0 25px;
+    width: 50%;
+}
+
+a.btn {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+.list-box {
+    float: left;
+    margin: 0 25px;
+    width: 15%;
+}
+
+.list {
+    padding-left: 10px;
+    width: 100%;
+    height: 720px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+}
+
+.list li {
+    padding: 8px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+}
+
+.list .current {
+    background-color: #eee;
+}
+
+.list li:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.row {
+    font-size: 14px;
+}
+
+.row strong {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#introduceDiv img {
+    display: block;
+    width: 100%;
+}
+
+.choose-img {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.choose-img li {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 25%;
+    height: 180px;
+}
+
+.choose-img .choosed {
+    border: 1px solid #11cd6e;
+}
+
+.choose-img .choosed i {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 34px;
+    height: 32px;
+    background: url(../images/icon-gou.png) no-repeat center center;
+    background-size: contain;
+}
+
+.choose-img li img {
+    display: block;
+    width: 100%;
+    height: 130px;
+}
+
+.choose-img li p {
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+
+

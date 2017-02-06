@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta http-equiv="Cache-Control" content="max-age=14400">
+    <title>景点详情</title>
+    <link rel="stylesheet" href="../../Static/css/base.css" />
+    <link rel="stylesheet" href="../../Static/css/style.css?2016080301" />
+    <link rel="stylesheet" href="../../Static/css/audioplayer.css">
+    <script src="../../Static/js/jquery-2.2.1.js"></script>
+    <script src="../../Static/js/jquery.touchSlider.js"></script>
+    <script>
+    // iOS浏览BUG修复
+    (function(doc) {
+        var addEvent = 'addEventListener',
+            type = 'gesturestart',
+            qsa = 'querySelectorAll',
+            scales = [1, 1],
+            meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+
+        function fix() {
+            meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+            doc.removeEventListener(type, fix, true);
+        }
+        if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+            fix();
+            scales = [.25, 1.6];
+            doc[addEvent](type, fix, true);
+        }
+    }(document));
+    </script>
+</head>
+
+<body>
+    <div class="wrapper" style="background-color: #fff;">
+        <div class="content">
+            <header>
+                <a class="left" href="javascript:;" onclick="history.back(-1);"><i class="icon-last"></i></a>
+                <h3></h3>
+                <a href="index.html"><i class="icon-home"></i></a>
+            </header>
+            <h2 class="scenery-name" id="sceneryName"></h2>
+            <section class="scenery-details" id="sceneryDetails">
+                <!-- <img class="scenery-pic" src="../Static/images/cal.png" alt="">
+                <div class="voice">
+                    <audio src="../Voice/seeyouagain.mp3" preload="auto" controls></audio>
+                </div>
+                <div class="scenery-intro"></div> -->
+            </section>
+            <div class="bottom-placeholder"></div>
+        </div>
+        <footer class="footer-index">
+            <ul class="contact clearfix">
+                <li>
+                    <a class="btn-index-follow" id="followBtn" href="javascript:;">点击关注</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="telBtn">电话咨询</a>
+                    <div class="tel-group">
+                        <a href="tel:65103815">拨打:65103815</a>
+                        <a href="tel:65103465">拨打:65103465</a>
+                        <p class="arrow-bottom"></p>
+                    </div>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <div class="overlay" id="followOverlay" style="display: none;">
+        <div class="overlay-bg"></div>
+        <div class="qr-code">
+            <img src="../../Static/images/qr-code.jpg" alt="">
+            <p>扫一扫关注道前印巷</p>
+        </div>
+    </div>
+    <script src="../../Static/js/common.js?v=2016091101"></script>
+    <script src="../../Static/js/audioplayer.js"></script>
+    <script>
+    var settings = {
+        url: 'http://szdq.losta.net/api/TravelScenery/' + getSceneryId(),
+        type: 'GET',
+        dataType: 'json'
+    }
+    $.ajax(settings).done(function(data) {
+        $('#sceneryName').html(data.SceneryName);
+        var sceneryHtml = '';
+        var voiceUrl = data.VoiceUrl? (data.VoiceUrl.indexOf('/') == 0? data.VoiceUrl : '/' +  data.VoiceUrl) : '/voice/seeyouagain.mp3';
+        voiceUrl = 'http://fast-szdq.losta.net/' + voiceUrl;
+        var mapUrl = data.MapUrl? data.MapUrl : '../Static/images/cal.png';
+        mapUrl = 'http://fast-szdq.losta.net/' + mapUrl;
+        sceneryHtml += '<img class="scenery-pic" src="' + mapUrl + '" alt="" />'
+                     + '<div class="voice">'
+                     + '    <audio src="' + voiceUrl + '" preload="auto" controls></audio>'
+                     + '</div>'
+                     + '<div class="scenery-intro">' + data.Introduce + '</div>'
+        $('#sceneryDetails').html(sceneryHtml);
+        $('audio').audioPlayer();
+    })
+    </script>
+</body>
+
+</html>
